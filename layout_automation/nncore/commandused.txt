@@ -1,0 +1,2 @@
+load("/root/Documents/nncore/nncore_auto.il")
+nnCore4AutomatedLayout("nncore" "nn_core4")
