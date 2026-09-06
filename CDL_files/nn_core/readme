@@ -1,1 +1,0 @@
-in this connect finsih_updating pin to vss via inverter(vdd as input) as using .CONNECT will not show VSS pin in schematic
