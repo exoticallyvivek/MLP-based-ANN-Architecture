@@ -1,0 +1,34 @@
+*******************************************************************************
+* INVX1 — Inverter, 2 transistors
+*******************************************************************************
+.SUBCKT INVX1 A Y VDD VSS
+*.PININFO A:I Y:O VDD:I VSS:I
+MP1 Y A VDD VDD pmos1v W=420n L=100n
+MN1 Y A VSS VSS nmos1v W=200n L=100n
+.ENDS INVX1
+
+*******************************************************************************
+* NAND2X1 — 2-input NAND, 4 transistors
+*******************************************************************************
+.SUBCKT NAND2X1 A B Y VDD VSS
+*.PININFO A:I B:I Y:O VDD:I VSS:I
+* PMOS parallel pull-up
+MP1 Y A VDD VDD pmos1v W=420n L=100n
+MP2 Y B VDD VDD pmos1v W=420n L=100n
+* NMOS series pull-down
+MN1 Y  A n_s VSS nmos1v W=400n L=100n
+MN2 n_s B VSS VSS nmos1v W=400n L=100n
+.ENDS NAND2X1
+
+*******************************************************************************
+* NOR2X1 — 2-input NOR, 4 transistors
+*******************************************************************************
+.SUBCKT NOR2X1 A B Y VDD VSS
+*.PININFO A:I B:I Y:O VDD:I VSS:I
+* PMOS series pull-up
+MP1 n_s A VDD VDD pmos1v W=840n L=100n
+MP2 Y   B n_s VDD pmos1v W=840n L=100n
+* NMOS parallel pull-down
+MN1 Y A VSS VSS nmos1v W=200n L=100n
+MN2 Y B VSS VSS nmos1v W=200n L=100n
+.ENDS NOR2X1

@@ -1,0 +1,315 @@
+
+            Assura (R) Physical Verification Version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25
+            Release 4.1_USR6_EHF13
+
+Copyright (c) Cadence Design Systems. All rights reserved.
+@(#)$CDS: assura_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:28 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on c2slab.daiict.ac.in from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/assura on Tue Jun 16 11:35:01 2026
+
+
+Starting /home/install/ASSURA41//tools.lnx86/assura/bin/aveng /root/Documents/std4mem/kkllvs.rsf -exec1 -LVS -cdslib /root/Documents/cds.lib
+@(#)$CDS: aveng_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:29 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on c2slab.daiict.ac.in from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/aveng on Tue Jun 16 11:35:01 2026
+
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+ Summary Report: kkllvs.sum
+ RSF           : /root/Documents/std4mem/kkllvs.rsf
+ Library Name  : std4mem
+ CDSLIB Path   : "/root/Documents/cds.lib"
+ Cell Name     : mem4
+ View Name     : layout
+ Rules File    : /home/install/FOUNDRY/analog/90nm/assura/extract.rul
+ Options       : -exec1 -LVS -cdslib /root/Documents/cds.lib 
+ Work Directory: /root/Documents/std4mem
+ Operating Mode: Legacy Mode is Off
+
+
+Starting dfIIToVdb...
+2026/06/16 11:35:01 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2026/06/16 11:35:01 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.04s.
+@(#)$CDS: dfIIToVdb_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:36 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on c2slab.daiict.ac.in from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/dfIIToVdb on Tue Jun 16 11:35:01 2026
+
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+*WARNING* LIB avTech from File /root/Documents/cds.lib Line 12 redefines
+LIB avTech from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 25 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 30 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 31 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB pad from File /root/Documents/cds.lib Line 45 redefines
+LIB pad from the same file (defined earlier.)
+*WARNING* The directory: '/root/Documents/padf' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'padf'.
+*WARNING* The directory: '/root/Documents/nand' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'nand'.
+*WARNING* The directory: '/root/Documents/inv2' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'inv2'.
+*WARNING* The directory: '/home/install/UMC180/exe' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'exe'.
+*WARNING* The directory: '/root/Downloads/scl180/pdk/cdns/sclpdk_v3/HOTCODE/amslibs/cds_default/cdslibs/ts18scl/devices/ts018_oa_compana_4M1L/rev2.0/ref_libs/ts018_scl_prim' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'ts018_scl_prim'.
+*WARNING* The directory: '/root/Documents/Testnp' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'Testnp'.
+*WARNING* The directory: '/root/Documents/test1' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test1'.
+*WARNING* The directory: '/root/Documents/test2' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test2'.
+*WARNING* The directory: '/home/install/UMC180/Designkits/Cadence_6.1/UMC_18_CMOS' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'UMC_18_CMOS'.
+*WARNING* The directory: '/root/Documents/test' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test'.
+*WARNING* LIB avTech from File /root/Documents/cds.lib Line 12 redefines
+LIB avTech from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 25 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 30 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 31 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB pad from File /root/Documents/cds.lib Line 45 redefines
+LIB pad from the same file (defined earlier.)
+*WARNING* The directory: '/root/Documents/padf' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'padf'.
+*WARNING* The directory: '/root/Documents/nand' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'nand'.
+*WARNING* The directory: '/root/Documents/inv2' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'inv2'.
+*WARNING* The directory: '/home/install/UMC180/exe' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'exe'.
+*WARNING* The directory: '/root/Downloads/scl180/pdk/cdns/sclpdk_v3/HOTCODE/amslibs/cds_default/cdslibs/ts18scl/devices/ts018_oa_compana_4M1L/rev2.0/ref_libs/ts018_scl_prim' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'ts018_scl_prim'.
+*WARNING* The directory: '/root/Documents/Testnp' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'Testnp'.
+*WARNING* The directory: '/root/Documents/test1' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test1'.
+*WARNING* The directory: '/root/Documents/test2' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test2'.
+*WARNING* The directory: '/home/install/UMC180/Designkits/Cadence_6.1/UMC_18_CMOS' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'UMC_18_CMOS'.
+*WARNING* The directory: '/root/Documents/test' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test'.
+Loading gpdk090/libInit.il ...
+	Loading gpdk090/loadCxt.ile ... done!
+	Loading context 'gpdk090' from library 'gpdk090' ... done!
+	Loading context 'pdkUtils' from library 'gpdk090' ... done!
+	Loading gpdk090/.cdsenv ... *WARNING* Master env file /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/spectre/.cdsenv is not readable
+done!
+	Loading gpdk090/libInitCustomExit.il ... 
+  *************************************************************           
+  *              Cadence Design Systems, Inc.                 *           
+  *                                                           *           
+  *                    Generic 90nm PDK                       *           
+  *                        (gpdk090)                          *           
+  *                                                           *           
+  *************************************************************           
+*WARNING* Cannot find /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/hspiceD directory to load environment variables
+*Error* _gets: argument #1 should be an I/O port (type template = "p") - nil
+<<< Stack Trace >>>
+_gets(fp)
+(line = _gets(fp))
+...
+failed!
+Failed to load gpdk090/libInit.il successfully!Compiling rules...
+
+WARNING LVS Run detected.
+Non-legacy mode has been disabled for this LVS run
+2026/06/16 11:35:02 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2026/06/16 11:35:02 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+Checking out license for Assura_LVS
+
+Reading the design data...
+
+
+
+Finished dfIIToVdb.
+
+Building the VDB part 2 in background mode.
+2026/06/16 11:35:02 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2026/06/16 11:35:02 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+
+Building tables for LVS Preprocessing in background mode.
+
+
+Starting /home/install/ASSURA41/tools.lnx86/assura/bin/vdbToCells /root/Documents/std4mem kkllvs
+
+Finished /home/install/ASSURA41/tools.lnx86/assura/bin/vdbToCells
+
+Starting Nvn PreExtraction...
+
+Starting /home/install/ASSURA41/tools.lnx86/assura/bin/nvn /root/Documents/std4mem/kkllvs.rsf -preExtract -exec1 -cdslib /root/Documents/cds.lib
+Checking out license for Assura_LVS
+@(#)$CDS: nvn_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:36 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+run on c2slab.daiict.ac.in at Tue Jun 16 11:35:02 2026
+  
+*************************************************************** 
+  
+ GENERIC PDK Assura Compare Rules file 
+  Cadence Design Systems shall not be liable for the accuracy 
+  of this LVS rule file or its ability to capture errors.     
+  The user is responsible for thoroughly testing and          
+  implementing its features.                                  
+ 
+*************************************************************** 
+ 
+Reading schematic network
+ running dfIIToVldb -cdslib /root/Documents/cds.lib /root/Documents/std4mem/kkllvs.vlr /root/Documents/std4mem/kkllvs.rsf
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.04s.
+@(#)$CDS: dfIIToVldb_64 version av4.1:Production:dfII20.1-64b:ICADVM20.1-64b.500.25 11/04/2022 00:35 (sjfhw885) $
+sub-version 4.1_USR6_EHF13, integ signature 2022-11-04-0002
+
+run on c2slab.daiict.ac.in from /home/install/ASSURA41/tools.lnx86/assura/bin/64bit/dfIIToVldb on Tue Jun 16 11:35:02 2026
+
+  
+*************************************************************** 
+  
+ GENERIC PDK Assura Compare Rules file 
+  Cadence Design Systems shall not be liable for the accuracy 
+  of this LVS rule file or its ability to capture errors.     
+  The user is responsible for thoroughly testing and          
+  implementing its features.                                  
+ 
+*************************************************************** 
+ 
+
+Loading tech rule set file : /home/install/FOUNDRY/analog/90nm/assura/techRuleSets
+Top Cell Library: "std4mem"
+Top Cell Name: "mem4"
+Top Cell View: "schematic"
+Output Data Base Name: "/root/Documents/std4mem/kkllvs.sdb"
+Simulator Name: "auLvs"
+*WARNING* LIB avTech from File /root/Documents/cds.lib Line 12 redefines
+LIB avTech from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 25 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 30 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 31 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB pad from File /root/Documents/cds.lib Line 45 redefines
+LIB pad from the same file (defined earlier.)
+*WARNING* The directory: '/root/Documents/padf' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'padf'.
+*WARNING* The directory: '/root/Documents/nand' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'nand'.
+*WARNING* The directory: '/root/Documents/inv2' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'inv2'.
+*WARNING* The directory: '/home/install/UMC180/exe' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'exe'.
+*WARNING* The directory: '/root/Downloads/scl180/pdk/cdns/sclpdk_v3/HOTCODE/amslibs/cds_default/cdslibs/ts18scl/devices/ts018_oa_compana_4M1L/rev2.0/ref_libs/ts018_scl_prim' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'ts018_scl_prim'.
+*WARNING* The directory: '/root/Documents/Testnp' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'Testnp'.
+*WARNING* The directory: '/root/Documents/test1' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test1'.
+*WARNING* The directory: '/root/Documents/test2' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test2'.
+*WARNING* The directory: '/home/install/UMC180/Designkits/Cadence_6.1/UMC_18_CMOS' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'UMC_18_CMOS'.
+View List: "auLvs schematic symbol"
+Stop List: "auLvs"
+*WARNING* The directory: '/root/Documents/test' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test'.
+*WARNING* LIB avTech from File /root/Documents/cds.lib Line 12 redefines
+LIB avTech from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 25 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 30 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB inv from File /root/Documents/cds.lib Line 31 redefines
+LIB inv from the same file (defined earlier.)
+*WARNING* LIB pad from File /root/Documents/cds.lib Line 45 redefines
+LIB pad from the same file (defined earlier.)
+*WARNING* The directory: '/root/Documents/padf' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'padf'.
+*WARNING* The directory: '/root/Documents/nand' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'nand'.
+*WARNING* The directory: '/root/Documents/inv2' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'inv2'.
+*WARNING* The directory: '/home/install/UMC180/exe' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'exe'.
+*WARNING* The directory: '/root/Downloads/scl180/pdk/cdns/sclpdk_v3/HOTCODE/amslibs/cds_default/cdslibs/ts18scl/devices/ts018_oa_compana_4M1L/rev2.0/ref_libs/ts018_scl_prim' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'ts018_scl_prim'.
+*WARNING* The directory: '/root/Documents/Testnp' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'Testnp'.
+*WARNING* The directory: '/root/Documents/test1' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test1'.
+*WARNING* The directory: '/root/Documents/test2' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test2'.
+*WARNING* The directory: '/home/install/UMC180/Designkits/Cadence_6.1/UMC_18_CMOS' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'UMC_18_CMOS'.
+*WARNING* The directory: '/root/Documents/test' does not exist
+	but was defined in libFile '/root/Documents/cds.lib' for Lib 'test'.
+Loading gpdk090/libInit.il ...
+	Loading gpdk090/loadCxt.ile ... done!
+	Loading context 'gpdk090' from library 'gpdk090' ... done!
+	Loading context 'pdkUtils' from library 'gpdk090' ... done!
+	Loading gpdk090/.cdsenv ... *WARNING* Master env file /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/spectre/.cdsenv is not readable
+done!
+	Loading gpdk090/libInitCustomExit.il ... 
+  *************************************************************           
+  *              Cadence Design Systems, Inc.                 *           
+  *                                                           *           
+  *                    Generic 90nm PDK                       *           
+  *                        (gpdk090)                          *           
+  *                                                           *           
+  *************************************************************           
+*WARNING* Cannot find /home/install/ASSURA41/tools.lnx86/dfII/etc/tools/hspiceD directory to load environment variables
+*Error* _gets: argument #1 should be an I/O port (type template = "p") - nil
+failed!
+Failed to load gpdk090/libInit.il successfully!Net Listing Mode is Analog
+writing /root/Documents/std4mem/kkllvs.sdb
+ inputting /root/Documents/std4mem/kkllvs.sdb
+*ERROR* No schematic specified.  Terminating NVN.
+
+*WARNING* /home/install/ASSURA41/tools.lnx86/assura/bin/nvn exit with bad status
+*WARNING* Status 256
+*WARNING* Assura execution terminated
+
+Finished /home/install/ASSURA41/tools.lnx86/assura/bin/nvn
+
+*WARNING* An error occurred during Nvn PreExtraction.
+LVS preprocessing requires a successful run of Nvn.
+Assura will now terminate.
+
+*WARNING* Bad exit from child process .. 0x100
+
+
+*****  aveng terminated abnormally  *****
+
+
+*WARNING* aveng exit with bad status
+*WARNING* Status 256
+*WARNING* Assura execution terminated
+
+
+*****  aveng fork terminated abnormally  *****
+

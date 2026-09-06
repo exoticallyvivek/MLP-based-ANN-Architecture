@@ -1,0 +1,1 @@
+nn_core4 gen_din_sel4 delay1_4_36 delay1_4_37 delay1_4_38 delay1_4_39 delay1_4_364 delay1_4_365 delay1_4_366 delay1_4_367 delay1_4_368 delay1_4_369 delay1_4_370 delay1_4_371 delay1_4_372 delay1_4_373 delay1_4_374 delay1_4_375 AND2X1 OR2X1 XOR2X1 MX2X1 CLKINVX1 CLKXOR2X1 SDFFQX1
