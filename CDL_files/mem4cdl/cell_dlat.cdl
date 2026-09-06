@@ -1,0 +1,36 @@
+**** DLAT — D-Latch, Enable High ****
+* Ports: E(enable) D(data) Q(out) VDD VSS
+* Transparent when E=1, holds when E=0
+* Uses INV x3 + TG x2 (positive feedback for bistability)
+* Hierarchy: INV, TG must exist in same library
+
+*--- Stubs (real cells exist in Virtuoso) ---*
+.SUBCKT INV A Y VDD VSS
+*.PININFO A:I Y:O VDD:I VSS:I
+.ENDS
+
+.SUBCKT TG IN OUT E Eb VDD VSS
+*.PININFO IN:I OUT:O E:I Eb:I VDD:I VSS:I
+.ENDS
+
+*--- DLAT body ---*
+.SUBCKT DLAT E D Q VDD VSS
+*.PININFO E:I D:I Q:O VDD:I VSS:I
+
+* En_b = NOT(E)
+XINV_EN E Eb VDD VSS / INV
+
+* TG1: passes D -> X when E=1
+XTG1 D X E Eb VDD VSS / TG
+
+* INV1: X -> Qb
+XINV1 X Qb VDD VSS / INV
+
+* INV2: Qb -> Q  (output)
+XINV2 Qb Q VDD VSS / INV
+
+* TG2: positive feedback Q -> X when E=0 (hold)
+* NOTE: E and Eb SWAPPED vs TG1 so it enables on E=0
+XTG2 Q X Eb E VDD VSS / TG
+
+.ENDS DLAT

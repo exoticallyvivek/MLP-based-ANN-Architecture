@@ -1,0 +1,49 @@
+*******************************************************************************
+* DFFQX1 — Positive edge-triggered D flip-flop
+* gpdk090: nmos1v/pmos1v, VDD=1.2V
+* Topology: master latch (CK=0 transparent) + slave latch (CK=1 transparent)
+* 18 transistors total
+* Ports: CK D Q VDD VSS
+*******************************************************************************
+.SUBCKT DFFQX1 CK D Q VDD VSS
+*.PININFO CK:I D:I Q:O VDD:I VSS:I
+
+*--- Clock inverter: CKb = ~CK ---*
+MP_CKI CKb CK  VDD VDD pmos1v W=420n L=100n
+MN_CKI CKb CK  VSS VSS nmos1v W=200n L=100n
+
+*--- MASTER LATCH ---*
+* TG1: D → n_mi when CK=0 (E=CKb=1, Eb=CK=0 → both ON)
+MN_TG1   n_mi CKb D    VSS nmos1v W=200n L=100n
+MP_TG1   n_mi CK  D    VDD pmos1v W=200n L=100n
+
+* Master inverter: n_mi → n_mo
+MP_MI    n_mo n_mi VDD  VDD pmos1v W=420n L=100n
+MN_MI    n_mo n_mi VSS  VSS nmos1v W=200n L=100n
+
+* Master feedback inverter: n_mo → n_mfb
+MP_MFI   n_mfb n_mo VDD VDD pmos1v W=420n L=100n
+MN_MFI   n_mfb n_mo VSS VSS nmos1v W=200n L=100n
+
+* TG_FBM: n_mfb → n_mi when CK=1 (holds master)
+MN_TFBM  n_mi CK  n_mfb VSS nmos1v W=200n L=100n
+MP_TFBM  n_mi CKb n_mfb VDD pmos1v W=200n L=100n
+
+*--- SLAVE LATCH ---*
+* TG2: n_mo → n_si when CK=1 (E=CK=1, Eb=CKb=0 → both ON)
+MN_TG2   n_si CK  n_mo VSS nmos1v W=200n L=100n
+MP_TG2   n_si CKb n_mo VDD pmos1v W=200n L=100n
+
+* Slave inverter: n_si → Q
+MP_SI    Q n_si VDD VDD pmos1v W=420n L=100n
+MN_SI    Q n_si VSS VSS nmos1v W=200n L=100n
+
+* Slave feedback inverter: Q → n_sfb
+MP_SFI   n_sfb Q VDD VDD pmos1v W=420n L=100n
+MN_SFI   n_sfb Q VSS VSS nmos1v W=200n L=100n
+
+* TG_FBS: n_sfb → n_si when CK=0 (holds slave)
+MN_TFBS  n_si CKb n_sfb VSS nmos1v W=200n L=100n
+MP_TFBS  n_si CK  n_sfb VDD pmos1v W=200n L=100n
+
+.ENDS DFFQX1

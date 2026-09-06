@@ -1,0 +1,117 @@
+*******************************************************************************
+* mem4_slim.cdl — 16x4-bit Sigmoid LUT ROM (slim/symbolic version)
+* Import this into Virtuoso to get hierarchical schematic with cell symbols
+* All sub-cells (INV NAND2 NAND4 TG DLAT ROM_ARRAY) must be created
+* separately in Virtuoso using their individual cell_*.cdl files
+*******************************************************************************
+
+*--- Stub declarations (real schematics exist in your Virtuoso library) ---*
+
+.SUBCKT INV A Y VDD VSS
+*.PININFO A:I Y:O VDD:I VSS:I
+.ENDS
+
+.SUBCKT NAND2 A B Y VDD VSS
+*.PININFO A:I B:I Y:O VDD:I VSS:I
+.ENDS
+
+.SUBCKT NAND4 A B C D Y VDD VSS
+*.PININFO A:I B:I C:I D:I Y:O VDD:I VSS:I
+.ENDS
+
+.SUBCKT TG IN OUT E Eb VDD VSS
+*.PININFO IN:I OUT:O E:I Eb:I VDD:I VSS:I
+.ENDS
+
+.SUBCKT DLAT E D Q VDD VSS
+*.PININFO E:I D:I Q:O VDD:I VSS:I
+.ENDS
+
+.SUBCKT ROM_ARRAY W00 W01 W02 W03 W04 W05 W06 W07
++ W08 W09 W10 W11 W12 W13 W14 W15
++ BL2 BL1 BL0 VDD VSS
+*.PININFO W00:I W01:I W02:I W03:I W04:I W05:I W06:I W07:I
+*.PININFO W08:I W09:I W10:I W11:I W12:I W13:I W14:I W15:I
+*.PININFO BL2:O BL1:O BL0:O VDD:I VSS:I
+.ENDS
+
+*******************************************************************************
+.SUBCKT mem4 CLK DIN ADDR3 ADDR2 ADDR1 ADDR0 DOUT3 DOUT2 DOUT1 DOUT0 VDD VSS
+*.PININFO CLK:I DIN:I ADDR3:I ADDR2:I ADDR1:I ADDR0:I
+*.PININFO DOUT3:O DOUT2:O DOUT1:O DOUT0:O VDD:I VSS:I
+
+*--- DOUT[3] always 0: all sigmoid values 2-6 have MSB=0 ---*
+.CONNECT DOUT3 VSS
+
+*--- Section 1: Address complements ---*
+XA3b ADDR3 A3b VDD VSS / INV
+XA2b ADDR2 A2b VDD VSS / INV
+XA1b ADDR1 A1b VDD VSS / INV
+XA0b ADDR0 A0b VDD VSS / INV
+
+*--- Section 2: 4-to-16 decoder (16 x NAND4 + 16 x INV) ---*
+* XWnn_N: NAND4 giving active-low wordline
+* XWnn_I: INV  giving active-high wordline Wnn
+XW00N A3b A2b A1b A0b W00b VDD VSS / NAND4
+XW00I W00b W00 VDD VSS / INV
+XW01N A3b A2b A1b ADDR0 W01b VDD VSS / NAND4
+XW01I W01b W01 VDD VSS / INV
+XW02N A3b A2b ADDR1 A0b W02b VDD VSS / NAND4
+XW02I W02b W02 VDD VSS / INV
+XW03N A3b A2b ADDR1 ADDR0 W03b VDD VSS / NAND4
+XW03I W03b W03 VDD VSS / INV
+XW04N A3b ADDR2 A1b A0b W04b VDD VSS / NAND4
+XW04I W04b W04 VDD VSS / INV
+XW05N A3b ADDR2 A1b ADDR0 W05b VDD VSS / NAND4
+XW05I W05b W05 VDD VSS / INV
+XW06N A3b ADDR2 ADDR1 A0b W06b VDD VSS / NAND4
+XW06I W06b W06 VDD VSS / INV
+XW07N A3b ADDR2 ADDR1 ADDR0 W07b VDD VSS / NAND4
+XW07I W07b W07 VDD VSS / INV
+XW08N ADDR3 A2b A1b A0b W08b VDD VSS / NAND4
+XW08I W08b W08 VDD VSS / INV
+XW09N ADDR3 A2b A1b ADDR0 W09b VDD VSS / NAND4
+XW09I W09b W09 VDD VSS / INV
+XW10N ADDR3 A2b ADDR1 A0b W10b VDD VSS / NAND4
+XW10I W10b W10 VDD VSS / INV
+XW11N ADDR3 A2b ADDR1 ADDR0 W11b VDD VSS / NAND4
+XW11I W11b W11 VDD VSS / INV
+XW12N ADDR3 ADDR2 A1b A0b W12b VDD VSS / NAND4
+XW12I W12b W12 VDD VSS / INV
+XW13N ADDR3 ADDR2 A1b ADDR0 W13b VDD VSS / NAND4
+XW13I W13b W13 VDD VSS / INV
+XW14N ADDR3 ADDR2 ADDR1 A0b W14b VDD VSS / NAND4
+XW14I W14b W14 VDD VSS / INV
+XW15N ADDR3 ADDR2 ADDR1 ADDR0 W15b VDD VSS / NAND4
+XW15I W15b W15 VDD VSS / INV
+
+*--- Section 3: NOR ROM array ---*
+* All 16 wordlines feed into ROM_ARRAY
+* Outputs: BL2 BL1 BL0 (bitlines, direct combinational)
+XROM W00 W01 W02 W03 W04 W05 W06 W07
++ W08 W09 W10 W11 W12 W13 W14 W15
++ BL2 BL1 BL0 VDD VSS / ROM_ARRAY
+
+*--- Section 4: Output register ---*
+* CLK_EN = CLK AND DIN  =  INV(NAND2(CLK,DIN))
+XCLKEN_N CLK DIN CLKEN_b VDD VSS / NAND2
+XCLKEN_I CLKEN_b CLKEN   VDD VSS / INV
+* 3 D-latches: capture bitline on CLK=1 AND DIN=1
+XDLAT2 CLKEN BL2 DOUT2 VDD VSS / DLAT
+XDLAT1 CLKEN BL1 DOUT1 VDD VSS / DLAT
+XDLAT0 CLKEN BL0 DOUT0 VDD VSS / DLAT
+
+.ENDS mem4
+
+* End of mem4_slim.cdl
+*
+* Instance count in mem4 schematic:
+*   INV         : 4 (addr complements)
+*   NAND4       : 16 (decoder)
+*   INV         : 16 (wordline buffers)
+*   ROM_ARRAY   : 1
+*   NAND2       : 1 (CLK enable)
+*   INV         : 1 (CLK enable)
+*   DLAT        : 3 (output register)
+*   .CONNECT    : 1 (DOUT3=VSS)
+*   Total symbols: 43

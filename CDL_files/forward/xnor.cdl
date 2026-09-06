@@ -1,0 +1,33 @@
+*******************************************************************************
+* XNOR2X1 — 2-input XNOR gate
+* gpdk090: nmos1v/pmos1v, VDD=1.2V
+* 12 transistors: 2 internal INVs + 4 PMOS pull-up + 4 NMOS pull-down
+* Ports: A B Y VDD VSS
+*******************************************************************************
+.SUBCKT XNOR2X1 A B Y VDD VSS
+*.PININFO A:I B:I Y:O VDD:I VSS:I
+
+*--- Internal inverters: generate Ab=~A, Bb=~B ---*
+MP_AI Ab A VDD VDD pmos1v W=420n L=100n
+MN_AI Ab A VSS VSS nmos1v W=200n L=100n
+
+MP_BI Bb B VDD VDD pmos1v W=420n L=100n
+MN_BI Bb B VSS VSS nmos1v W=200n L=100n
+
+*--- PMOS pull-up: Y=1 when A=B ---*
+* Path 1: A=0, B=0 (MP1 gate=A=0 ON, MP2 gate=B=0 ON)
+MP1 n_p1 A  VDD VDD pmos1v W=840n L=100n
+MP2 Y    B  n_p1 VDD pmos1v W=840n L=100n
+* Path 2: A=1, B=1 (Ab=0 ON, Bb=0 ON)
+MP3 n_p2 Ab VDD VDD pmos1v W=840n L=100n
+MP4 Y    Bb n_p2 VDD pmos1v W=840n L=100n
+
+*--- NMOS pull-down: Y=0 when A≠B ---*
+* Path 1: A=0 (Ab=1), B=1
+MN1 Y    B  n_n1 VSS nmos1v W=400n L=100n
+MN2 n_n1 Ab VSS  VSS nmos1v W=400n L=100n
+* Path 2: A=1, B=0 (Bb=1)
+MN3 Y    A  n_n2 VSS nmos1v W=400n L=100n
+MN4 n_n2 Bb VSS  VSS nmos1v W=400n L=100n
+
+.ENDS XNOR2X1
